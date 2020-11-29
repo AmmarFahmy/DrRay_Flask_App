@@ -1,0 +1,338 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 4, 2019, 8:13:14 PM
+    Author     : ISK
+*/
+
+body{
+    background: url("../images/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.login_form form{
+  overflow: hidden;
+  background: inherit;
+}
+
+.blur {
+  background: url("../images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+  filter: blur(30px);
+  position: absolute;
+  height: 300px;
+  top: 37%;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border:1px solid white;
+  z-index: -1;
+}
+
+.loginErrorMsg,loginAgainMsg{
+    color: red;
+    margin-top: -20px;
+    margin-bottom: 0.3em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.outer {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.middle {
+  margin-top: 40%;
+}
+
+.input-group input::placeholder{
+    color:#FFFFFF!important;
+}
+
+.form-control {
+  background-color: transparent;
+  border: 1px solid #E3E3E3;
+  border-radius: 30px;
+  color: #FFFFFF;
+  line-height: normal;
+  font-size: 0.8571em;
+  -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  -ms-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  
+}
+
+.form-control:focus {
+  border: 1px solid #f96332;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: 0 !important;
+  color: #FFFFFF;
+}
+
+.form-group.no-border.input-lg .form-control,
+.input-group.no-border.input-lg .form-control {
+  padding: 20px 19px;
+  font-size: 1.1em;
+}
+
+.form-group.no-border .form-control,
+.form-group.no-border .form-control+.input-group-text,
+.input-group.no-border .form-control,
+.input-group.no-border .form-control+.input-group-text {
+  background-color: rgba(222, 222, 222, 0.5);
+  border: medium none;
+}
+
+.form-group.no-border .form-control:focus,
+.form-group.no-border .form-control:active,
+.form-group.no-border .form-control:active,
+.form-group.no-border .form-control+.input-group-text:focus,
+.form-group.no-border .form-control+.input-group-text:active,
+.form-group.no-border .form-control+.input-group-text:active,
+.input-group.no-border .form-control:focus,
+.input-group.no-border .form-control:active,
+.input-group.no-border .form-control:active,
+.input-group.no-border .form-control+.input-group-text:focus,
+.input-group.no-border .form-control+.input-group-text:active,
+.input-group.no-border .form-control+.input-group-text:active {
+  border: medium none;
+  background-color: rgba(222, 222, 222, 0.8);
+}
+
+
+.form-group.no-border .input-group-prepend .input-group-text,
+.input-group.no-border .input-group-prepend .input-group-text {
+  background-color: rgba(222, 222, 222, 0.5);
+  border: none;
+  border-left: transparent !important;
+}
+
+.input-group-text {
+  background-color: #FFFFFF;
+  border: 1px solid #E3E3E3;
+  border-radius: 30px;
+  color: #ffffff;
+  -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  -ms-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.input-group,
+.form-group {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.input-group-text i {
+  width: 17px;
+  color:#FFFFFF;
+}
+
+.show_hide{
+    position: absolute;
+    right:0;
+    padding: 0.4em 0.9em;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor:pointer;
+    z-index: 50;
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+.show_hide:hover{
+    padding-top: 0.44em;
+    -webkit-transform: scale(1.2);
+}
+
+.card-footer a{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.card-footer{
+    margin-top: 1em; 
+    border-top:1px solid #E3E3E3; 
+}
+
+.loginBtn,.resetReq{
+    background: #f96332!important;
+    border: none;
+    width: 100%;
+    height: 2em;
+    font-size: 1.4em;
+    color:#FFFFFF;
+    border-radius: 40px;
+}
+
+.RegForm{
+    margin-top:-1em;
+}
+
+.reg_form{
+   margin-top: 1em; 
+}
+
+.reg_form_back_tologin{
+    margin-top: 0.5em;
+    color: #fff;
+}
+
+.reg_form h6, .reg_form h6 a{
+    color:#ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back_link{
+    color:#424ef4!important;
+}
+
+.registatiom_form{
+    margin-top: -10%!important;
+}
+
+.registatiom_form h3{
+    color:#FFFFFF;
+}
+
+.error_message{
+    font-weight: bolder;
+    color:#DC143C;
+    margin-left: 30%;
+    font-size: 16px;
+    font-style: italic;
+    display: none;
+}
+
+.hedding{
+    color:#FFFFFF;
+    text-align: center;
+}
+.btn{
+    margin: auto;
+  
+}
+.table table-hover{
+    color: wheat;
+}
+
+.detailsCBtn{
+    background: #4286f4;
+    color:#FFF;
+    border:1px solid transparent;
+    border-radius: 10px;
+    font-size: 1em;
+    width: 10em;
+}
+
+.allmembers-form .table,.outtab .table,.userreq-form .table{
+    text-align: center;
+    margin:auto;
+    width: 50%;
+    padding: 10px;
+    border-collapse: collapse;
+    border-radius: 1em;
+    margin-bottom: 50px;
+}
+.change-form,.outtab,.userreq-form{
+    text-align: center;
+    color: white;
+    margin:auto;
+    width: 50%;
+    padding: 10px;
+    border-collapse: collapse;
+    border-radius: 1em;
+    border: 2px solid white;
+    z-index: -1;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.change-form h3{
+    color:#FFF;
+}
+
+.change-form :focus{
+    color:black!important;
+}
+
+.change-form input{
+    color:#FFFFFF;
+}
+
+.form-control{
+    border: 2px solid white;
+}
+.changed{
+    margin: auto
+}
+.button button,.allmembtn,.changebtn {
+    background-color:#f96332; 
+    min-width: 20%;
+    margin-top: 10px;
+    border: 1px solid #f96332;
+    border-radius: 5em;
+    color: #fff;
+}
+.button button:hover,.allmembtn:hover,.changebtn:hover{
+    background-color: transparent;
+    border: 1px solid #f96332;
+    color:#fff;
+}
+.button button:foucs,.allmembtn:foucs,changebtn:focus{
+  outline: none; 
+  box-shadow: none;
+  border:none;
+}
+.button{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.changeAdmin{
+    padding: 0.5em;
+    background: transparent;
+    color:#fff;
+}
+
+.changeAdmin option{
+    padding :10px auto;
+    background: rgba(5, 5, 5, 5);
+}
+
+.backBtn{
+    padding: 1em 1.2em;
+    border-radius: 50%;
+    border-color: #FFF;
+    transition: 0.5s;
+    background: transparent;
+}
+
+.backBtn:hover{
+    transform: scale(1.3);
+}
+
+.backBtn .fa{
+    font-size: 1.5em;
+    color:#FFF;
+    font-weight: bold;
+}
