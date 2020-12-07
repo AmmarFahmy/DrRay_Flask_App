@@ -298,7 +298,7 @@ body{
     border: 1px solid #f96332;
     color:#fff;
 }
-.button button:foucs,.allmembtn:foucs,changebtn:focus{
+.button button:focus,.allmembtn:focus,changebtn:focus{
   outline: none; 
   box-shadow: none;
   border:none;
@@ -315,7 +315,7 @@ body{
 }
 
 .changeAdmin option{
-    padding :10px auto;
+    padding :10px ;
     background: rgba(5, 5, 5, 5);
 }
 
