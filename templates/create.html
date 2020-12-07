@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form onsubmit="myFunction()" id="my-form">
+      <input type="hidden" name="prediction" id="prediction">
+      <input type="hidden" name="probability" id="probability">
+      <input type="submit">
+</form>
+<script>
+// This function gets called once the user submits the form
+function myFunction(){
+
+    // First get the value from the cronMDMtimer-span
+    prediction = $('.result').html();
+    probability = $('.probability').html();
+
+    // Then store the extracted timerValue in a hidden form field
+    $("#prediction").val(prediction);
+    $("#probability").val(probability);
+
+    // submit the form using it's ID "my-form"
+    $("#my-form").submit();
+}
+</script>
+
+</body>
+</html>
