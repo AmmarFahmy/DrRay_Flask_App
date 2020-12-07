@@ -54,7 +54,7 @@ def predict():
 	image = Image.open(dataBytesIO)
 
 	test_image=preprocess(image)
-    
+
     #test_image=test_image.reshape(1,100,100,1) #extra line to fix that error
 
 	prediction = model.predict(test_image)
