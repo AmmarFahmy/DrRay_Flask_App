@@ -1,31 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<form onsubmit="myFunction()" id="my-form">
-      <input type="hidden" name="prediction" id="prediction">
-      <input type="hidden" name="probability" id="probability">
-      <input type="submit">
-</form>
-<script>
-// This function gets called once the user submits the form
-function myFunction(){
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    // First get the value from the cronMDMtimer-span
-    prediction = $('.result').html();
-    probability = $('.probability').html();
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
 
-    // Then store the extracted timerValue in a hidden form field
-    $("#prediction").val(prediction);
-    $("#probability").val(probability);
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    // submit the form using it's ID "my-form"
-    $("#my-form").submit();
-}
-</script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
-</body>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css"
+    />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../static/css/Style.css" />
+
+    <script src="../static/js/Script.js"></script>
+
+    <link rel="icon" href="../static/images/logo.png" />
+    <title>DrRay</title>
+  </head>
+
+  <body>
+<?php
+
+$first_name = $_POST['prediction'];
+$last_name = $_POST['probability'];
+
+echo $first_name;
+echo $last_name;
+
+?>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 </html>
