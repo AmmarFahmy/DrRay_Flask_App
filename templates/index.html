@@ -43,22 +43,18 @@
     <div class="hedding" data-aos="fade-up" data-aos-duration="2500">
       <br /><br />
 
-      <h1>BRAIN  - PCNN</h1>
+      <h1>BRAIN TUMOR PREDICITON - PCNN</h1>
 
       <div class="button" align="center">
         <div class="col-md-4 ml-auto mr-auto">
-          <input
-            id="image-selector"
-            type="file"
-            class="form-control"
-            accept="image/*"
-            required=""
-          />
-          <br />
+          <input id="image-selector" type="file" class="form-control" accept="image/*" required="" /><br />
         </div>
         <button id="predict-button">Predict</button> <br /><br />
-        <p>PREDICTION: <span id="result">...</span></p>
-        <p>PROBABILITY: <span id="probability">...</span></p>
+{#        <p>PREDICTION: <span id="result">...</span></p>#}
+{#        <p>PROBABILITY: <span id="probability">...</span></p>#}
+        <p><label>PREDICTION: <span id="result">...</span></label></p>
+        <p><label>PROBABILITY: <span id="probability">...</span></label></p>
+        <button id="print-report">Print Report</button> <br /><br />
         <img id="selected-image" width="400" src="" />
         <div class="registatiom_form clear-filter" filter-color="blue">
           <div class="content">
@@ -67,11 +63,11 @@
                 <div class="middle">
                   <div class="blur"></div>
                   <div data-aos="zoom-in" data-aos-duration="2500">
-                    <center>
+                    <div style="text-align: center;">
                       <button class="backBtn" onclick="window.history.go(-1); return false;">
                         <i class="fa fa-arrow-left"></i>
                       </button>
-                    </center>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -80,6 +76,30 @@
         </div>
       </div>
     </div>
+  <form onsubmit="myFunction()" action="create.html" id="my-form">
+      <input type="hidden" name="prediction" id="predictions">
+      <input type="hidden" name="probability" id="probabilitys">
+  </form>
+
+<script>
+// This function gets called once the user submits the form
+function myFunction(){
+
+    // First get the value from the span
+    prediction = $('.result').html();
+    probability = $('.probability').html();
+
+    // Then store the extracted timerValue in a hidden form field
+    $("#predictions").val(prediction);
+    $("#probabilitys").val(probability);
+
+    console.log(prediction);
+    console.log(probability);
+    // submit the form using it's ID "my-form"
+    $("#my-form").submit();
+}
+</script>
+
   </body>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -112,11 +132,19 @@
         JSON.stringify(message),
         function (response) {
           $("#result").text(response.prediction.result);
-          $("#probability").text(response.prediction.accuracy.toFixed(2));
+          $("#probability").text(response.prediction.accuracy.toFixed(4));
           console.log(response);
         }
       );
     });
+
+    $("#print-report").click(function () {
+      $.post("http://127.0.0.1:5000/create.html");
+    });
+
+
+
     AOS.init();
   </script>
+
 </html>
